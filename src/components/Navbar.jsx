@@ -78,9 +78,16 @@ export default function Navbar() {
       </div>
 
       {/* Sign In */}
-      <Button className="bg-orange-400 text-black font-semibold rounded-full px-6 hover:bg-orange-500">
-        Sign In
-      </Button>
+      <SignedOut>
+	  <SignInButton mode="modal">
+		<Button className="bg-orange-400 text-black font-semibold rounded-full px-6 hover:bg-orange-500">
+		  Sign In
+		</Button>
+	  </SignInButton>
+	</SignedOut>
+	<SignedIn>
+		<UserButton afterSignOutUrl="/" />
+	</SignedIn>
     </nav>
   );
 }
